@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, LoadingController, ToastController } from 'ionic-angular';
 import { BaseUI } from '../../common/baseui'
-import { RestProvider } from '../../providers/rest/rest'
+import { ApiProvider } from '../../providers/api/api'
+import { Storage } from '@ionic/storage'
+import { RegisterPage } from '../register/register'
 
 /**
  * Generated class for the LoginPage page.
@@ -24,8 +26,9 @@ export class LoginPage extends BaseUI {
     public navParams: NavParams,
     public ViewCtr: ViewController,
     public loadingCtr: LoadingController,
-    public rest: RestProvider,
-    public toastCtrl: ToastController
+    public api: ApiProvider,
+    public toastCtrl: ToastController,
+    public storage: Storage
   ) {
     super()
   }
@@ -36,14 +39,17 @@ export class LoginPage extends BaseUI {
 
   login(){
     const loading = super.showLoading(this.loadingCtr, "登录中...")
-    this.rest.login(this.mobile, this.password)
-    .subscribe(
-      f => {
-        if(f['Status'] =='OK'){
 
+    this.api.login(this.mobile, this.password).subscribe(
+      data => {
+        if(data['Status'] =='OK'){
+          // 处理登录成功
+          loading.dismiss()
+          this.storage.set('UserId', data['UserId']) 
+          this.dismiss()
         }else{
           loading.dismiss()
-          super.showToast(this.toastCtrl, f['StatusContent'])
+          super.showToast(this.toastCtrl, data['StatusContent'])
         }
     },
     error => this.errorMessage = <any>error )
@@ -51,6 +57,9 @@ export class LoginPage extends BaseUI {
 
   dismiss() {
     this.ViewCtr.dismiss()
+  }
+  pushRegisterPage() {
+    this.navCtrl.push(RegisterPage)
   }
 
 }

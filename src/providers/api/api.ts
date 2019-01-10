@@ -1,8 +1,7 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import { catchError, map, tap } from 'rxjs/operators';
 
 /*
   Generated class for the RestProvider provider.
@@ -11,7 +10,7 @@ import 'rxjs/add/operator/catch';
   and Angular DI.
 */
 @Injectable()
-export class RestProvider {
+export class ApiProvider {
 
   constructor(public http: HttpClient) {
     // console.log('Hello RestProvider Provider');
@@ -27,8 +26,11 @@ export class RestProvider {
    */
   private getUrlReturn(url: string): Observable<string[]> {
     return this.http.get(url)
-      .map(this.extractData)
-      .catch(this.handleError);
+    .pipe(
+      map(v => JSON.parse(v)),
+      tap(_ => console.log('fetched')),
+      // catchError(this.handleError2('error',[]))
+    )
   }
   // feed
   private apiUrlFeeds = 'https://imoocqa.gugujiankong.com/api/feeds/get'
@@ -49,11 +51,16 @@ login(mobile,password):Observable<string[]>{
   return this.getUrlReturn(this.apiUrlLogin+'?mobile='+mobile+'&password='+password)
 }
 
+register(mobile,nickname,password):Observable<string[]>{
+  return this.getUrlReturn(this.apiUrlRegister+'?mobile='+mobile+ '&nickname='+ nickname +'&password='+password)
+}
+
   private extractData(res) {
     let body = res.body;
     return JSON.parse(body) || {};
   }
 
+  // @todo 
   private handleError(error: any) {
     let errMsg: string;
     
@@ -61,8 +68,21 @@ login(mobile,password):Observable<string[]>{
     const err = body.error || JSON.stringify(body);
     errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
     
+    console.log(error)
     console.error(errMsg)
     return Observable.throw(errMsg)
   }
-
+  private handleError2<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+ 
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+ 
+      // TODO: better job of transforming error for user consumption
+      console.log(`${operation} failed: ${error.message}`);
+ 
+      // Let the app keep running by returning an empty result.
+      return Observable.throw(error)
+    };
+  }
 }
