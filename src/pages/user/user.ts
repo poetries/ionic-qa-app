@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, ToastController,  ModalController,
 import { Storage } from '@ionic/storage'
 import { BaseUI } from '../../common/baseui'
 import { ApiProvider } from '../../providers/api/api'
+import { HeadfacePage } from '../headface/headface';
 
 /**
  * Generated class for the UserPage page.
@@ -76,6 +77,9 @@ export class UserPage  extends BaseUI {
   logout() {
     this.storage.remove("UserId");
     this.ViewCtr.dismiss()
+  }
+  modifyAvatar() {
+    this.navCtrl.push(HeadfacePage)
   }
 
 }

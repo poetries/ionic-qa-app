@@ -6,6 +6,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
+import { HeadfacePage } from '../pages/headface/headface';
 import { DiscoveryPage } from '../pages/discovery/discovery';
 import { ChatPage } from '../pages/chat/chat';
 import { RegisterPage } from '../pages/register/register';
@@ -23,6 +24,7 @@ import { ApiProvider } from '../providers/api/api';
   declarations: [
     MyApp,
     HomePage,
+    HeadfacePage,
     DiscoveryPage,
     ChatPage,
     RegisterPage,
@@ -50,6 +52,7 @@ import { ApiProvider } from '../providers/api/api';
     UserPage,
     NotificationPage,
     UserCenterPage,
+    HeadfacePage,
     LoginPage,
     TabsPage
   ],

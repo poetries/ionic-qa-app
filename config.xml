@@ -85,4 +85,7 @@
     <engine name="android" spec="7.1.4" />
     <engine name="browser" spec="5.0.4" />
     <plugin name="cordova-plugin-camera" spec="4.0.3" />
+    <plugin name="cordova-plugin-file" spec="~6.0.1" />
+    <plugin name="cordova-plugin-file-transfer" spec="~1.7.1" />
+    <plugin name="cordova-plugin-filepath" spec="~1.5.1" />
 </widget>
