@@ -54,8 +54,11 @@ login(mobile,password):Observable<string[]>{
 register(mobile,nickname,password):Observable<string[]>{
   return this.getUrlReturn(this.apiUrlRegister+'?mobile='+mobile+ '&nickname='+ nickname +'&password='+password)
 }
+getUserInfo(userId) :Observable<string[]>{
+  return this.getUrlReturn(this.apiUrlUserInfo+'?userId='+userId)
+}
 
-  private extractData(res) {
+  private extractData(res) { 
     let body = res.body;
     return JSON.parse(body) || {};
   }
