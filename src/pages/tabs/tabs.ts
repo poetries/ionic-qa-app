@@ -4,7 +4,7 @@ import { HomePage } from '../home/home';
 import { DiscoveryPage } from '../discovery/discovery';
 import { ChatPage } from '../chat/chat';
 import { NotificationPage } from '../notification/notification';
-import { MorePage } from '../more/more';
+import { UserCenterPage } from '../usercenter/usercenter';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class TabsPage {
   tabDiscovery = DiscoveryPage;
   tabChat = ChatPage;
   tabNotification = NotificationPage;
-  tabMore = MorePage;
+  tabUserCenter = UserCenterPage;
 
   constructor() {
 

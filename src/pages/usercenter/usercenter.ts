@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams,ModalController, LoadingController,
 import { Storage } from '@ionic/storage'
 import { BaseUI } from '../../common/baseui'
 import { LoginPage } from '../login/login'
+import { UserPage } from '../user/user'
 import { ApiProvider } from '../../providers/api/api'
 
 /**
@@ -13,14 +14,14 @@ import { ApiProvider } from '../../providers/api/api'
  */
 
 @Component({
-  selector: 'page-more',
-  templateUrl: 'more.html',
+  selector: 'page-usercenter',
+  templateUrl: 'usercenter.html',
 })
-export class MorePage  extends BaseUI {
+export class UserCenterPage  extends BaseUI {
 
   public notLogin: boolean = true;
   public logined: boolean = false;
-  public headface: string;
+  public headface: string = "http://img.mukewang.com/user/57a322f00001e4ae02560256-40-40.jpg?1547178979710";
   public userinfo: any;
 
 
@@ -36,6 +37,10 @@ export class MorePage  extends BaseUI {
 
   showModal(){
     let modal = this.ModalCtrl.create(LoginPage)
+    // 关闭后的回调 再次刷新用户登录态 否则不能正常显示用户登录信息
+    modal.onDidDismiss(()=>{
+      this.loadUserPage()
+    })
     modal.present()
   }
   
@@ -62,5 +67,7 @@ export class MorePage  extends BaseUI {
       }
     })
   }
-
+  gotoUserPage() {
+    this.navCtrl.push(UserPage)
+  }
 }

@@ -9,8 +9,9 @@ import { HomePage } from '../pages/home/home';
 import { DiscoveryPage } from '../pages/discovery/discovery';
 import { ChatPage } from '../pages/chat/chat';
 import { RegisterPage } from '../pages/register/register';
+import { UserPage } from '../pages/user/user';
 import { NotificationPage } from '../pages/notification/notification';
-import { MorePage } from '../pages/more/more';
+import { UserCenterPage } from '../pages/usercenter/usercenter';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -25,8 +26,9 @@ import { ApiProvider } from '../providers/api/api';
     DiscoveryPage,
     ChatPage,
     RegisterPage,
+    UserPage,
     NotificationPage,
-    MorePage,
+    UserCenterPage,
     LoginPage,
     TabsPage
   ],
@@ -45,8 +47,9 @@ import { ApiProvider } from '../providers/api/api';
     DiscoveryPage,
     ChatPage,
     RegisterPage,
+    UserPage,
     NotificationPage,
-    MorePage,
+    UserCenterPage,
     LoginPage,
     TabsPage
   ],

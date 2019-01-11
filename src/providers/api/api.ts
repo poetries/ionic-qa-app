@@ -27,7 +27,7 @@ export class ApiProvider {
   private getUrlReturn(url: string): Observable<string[]> {
     return this.http.get(url)
     .pipe(
-      map(v => JSON.parse(v)),
+      map((val:any) => JSON.parse(val)),
       tap(_ => console.log('fetched')),
       // catchError(this.handleError2('error',[]))
     )
@@ -55,7 +55,10 @@ register(mobile,nickname,password):Observable<string[]>{
   return this.getUrlReturn(this.apiUrlRegister+'?mobile='+mobile+ '&nickname='+ nickname +'&password='+password)
 }
 getUserInfo(userId) :Observable<string[]>{
-  return this.getUrlReturn(this.apiUrlUserInfo+'?userId='+userId)
+  return this.getUrlReturn(this.apiUrlUserInfo+'?userid='+userId)
+}
+updateNickName(userId, nickname) :Observable<string[]>{
+  return this.getUrlReturn(this.apiUrlUpdateNickName+'?userid='+userId + '&nickname=' + nickname)
 }
 
   private extractData(res) { 

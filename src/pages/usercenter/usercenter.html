@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>更多</ion-title>
+    <ion-title>用户中心</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -27,7 +27,7 @@
 
     <div *ngIf="logined">
       <ion-list class="marginTop">
-        <button ion-item>
+        <button ion-item (click)="gotoUserPage()">
           <ion-avatar item-start *ngIf="headface">
             <img src="{{headface}}" />
           </ion-avatar>
