@@ -42,8 +42,20 @@ export class RegisterPage  extends BaseUI  {
     this.navCtrl.pop()
   }
   doRegister() {
+    if(!(/^1[34578]\d{9}$/.test(this.mobile))){
+      return  super.showToast(this.toastCtrl, '手机号码格式不正确!')
+    }
+    if(!this.nickname) {
+      return  super.showToast(this.toastCtrl, '昵称不能为空')
+    }
+    if(this.nickname && this.nickname.length<=3) {
+      return  super.showToast(this.toastCtrl, '昵称不能小于三位')
+    }
+    if(!this.password) {
+      return  super.showToast(this.toastCtrl, '密码不能为空')
+    }
     if(this.password != this.confirmPassword) {
-       super.showToast(this.toastCtrl, '输入密码不一致')
+       return super.showToast(this.toastCtrl, '输入密码不一致')
     }else {
       const loading = super.showLoading(this.loadingCtr, "注册中...")
 
