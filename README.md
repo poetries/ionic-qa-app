@@ -35,3 +35,7 @@ ionic serve
 **2. 环境搭建**
 
 > [开发环境配置](docs/README.md)
+
+### screenShot
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-af653cf43d824c6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

@@ -129,3 +129,4 @@ npm run serve
 
 - `ionic cordova platforms add android`
 - `ionic cordova build android --release`
+
