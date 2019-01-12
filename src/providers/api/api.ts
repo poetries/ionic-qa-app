@@ -47,19 +47,22 @@ export class ApiProvider {
   private apiUrlGetQuestion = 'https://imoocqa.gugujiankong.com/api/question/get'
   private apiUrlAnswer = 'https://imoocqa.gugujiankong.com/api/question/answer'
 
-login(mobile,password):Observable<string[]>{
-  return this.getUrlReturn(this.apiUrlLogin+'?mobile='+mobile+'&password='+password)
-}
+  login(mobile,password):Observable<string[]>{
+    return this.getUrlReturn(this.apiUrlLogin+'?mobile='+mobile+'&password='+password)
+  }
 
-register(mobile,nickname,password):Observable<string[]>{
-  return this.getUrlReturn(this.apiUrlRegister+'?mobile='+mobile+ '&nickname='+ nickname +'&password='+password)
-}
-getUserInfo(userId) :Observable<string[]>{
-  return this.getUrlReturn(this.apiUrlUserInfo+'?userid='+userId)
-}
-updateNickName(userId, nickname) :Observable<string[]>{
-  return this.getUrlReturn(this.apiUrlUpdateNickName+'?userid='+userId + '&nickname=' + nickname)
-}
+  register(mobile,nickname,password):Observable<string[]>{
+    return this.getUrlReturn(this.apiUrlRegister+'?mobile='+mobile+ '&nickname='+ nickname +'&password='+password)
+  }
+  getUserInfo(userId) :Observable<string[]>{
+    return this.getUrlReturn(this.apiUrlUserInfo+'?userid='+userId)
+  }
+  updateNickName(userId, nickname) :Observable<string[]>{
+    return this.getUrlReturn(this.apiUrlUpdateNickName+'?userid='+userId + '&nickname=' + nickname)
+  }
+  saveQuestion(userId, title, content):Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlQuestionSave+'?userid='+userId + '&title=' + title + '&content=' + content)
+  }
 
   private extractData(res) { 
     let body = res.body;
