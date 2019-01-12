@@ -32,6 +32,7 @@
             <img src="{{headface}}" />
           </ion-avatar>
           <h2 *ngIf="userinfo">{{userinfo.UserNickName}}</h2>
+          <h2 *ngIf="!userinfo">加载中...</h2>
           <p>查看个人主页或编辑简介</p>
         </button>
       </ion-list>

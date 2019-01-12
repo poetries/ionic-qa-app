@@ -14,7 +14,7 @@
 
 
 <ion-content padding>
-  <img src=""  class="img"/>
+  <img src="{{pathForImage(lastImage)}}"  class="img" [hidden]="lastImage === null" />
   <h3>请从图片库选择一个图片</h3>
 </ion-content>
 
@@ -24,8 +24,8 @@
       <button ion-button icon-left (click)="presentActionSheet()">
         <ion-icon name="camera"></ion-icon>选择...
       </button>
-      
-      <button ion-button icon-left>
+
+      <button ion-button icon-left (click)="uploadImage()"  [disabled]="lastImage === null">
           <ion-icon name="cloud-upload"></ion-icon>上传
         </button>
     </ion-buttons>
