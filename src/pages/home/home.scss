@@ -11,4 +11,16 @@ page-home {
         float: left;
         width: 90%;
     }
+    .floatMenu {
+        width: 100%;
+        height: 36px;
+        background-color: #ffffff;
+        margin-bottom: 5px;
+        color: #999999;
+        font-weight: bold;
+    }
+    .line-float-left {
+        float: left;
+        color: #dddddd;
+    }
 }

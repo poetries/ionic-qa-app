@@ -1,18 +1,32 @@
 <ion-header>
     <ion-toolbar>
         <ion-searchbar placeholder="搜索：如何高效学习Ionic开发"></ion-searchbar>
-        <ion-icon name='text' class="top_header_msg_icon"></ion-icon>
+        <ion-icon name='text' class="top_header_msg_icon"  (tap)="gotoQuestion()"></ion-icon>
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>poetry to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <div class="floatMenu">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 text-center>
+          <div (tap)="gotoQuestion()">
+            <ion-icon name="create"></ion-icon> 提问
+          </div>
+        </ion-col>
+        <ion-col col-4 text-center>
+          <div>
+            <span class="line-float-left">|</span>
+            <ion-icon name="albums"></ion-icon> 回答
+          </div>
+        </ion-col>
+        <ion-col col-4 text-center>
+          <div (tap)="gotoQuestion()">
+            <span class="line-float-left">|</span>
+            <ion-icon name="share-alt"></ion-icon> 分享
+           </div>
+         </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

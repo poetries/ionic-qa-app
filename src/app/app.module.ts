@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { HeadfacePage } from '../pages/headface/headface';
+import { QuestionPage } from '../pages/question/question';
 import { DiscoveryPage } from '../pages/discovery/discovery';
 import { ChatPage } from '../pages/chat/chat';
 import { RegisterPage } from '../pages/register/register';
@@ -30,6 +31,7 @@ import { FilePath } from '@ionic-native/file-path';
     MyApp,
     HomePage,
     HeadfacePage,
+    QuestionPage,
     DiscoveryPage,
     ChatPage,
     RegisterPage,
@@ -58,6 +60,7 @@ import { FilePath } from '@ionic-native/file-path';
     NotificationPage,
     UserCenterPage,
     HeadfacePage,
+    QuestionPage,
     LoginPage,
     TabsPage
   ],
