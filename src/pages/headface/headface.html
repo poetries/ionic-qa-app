@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <img src="{{pathForImage(lastImage)}}"  class="img" [hidden]="lastImage === null" />
-  <h3>请从图片库选择一个图片</h3>
+  <h3 [hidden]="lastImage !== null">请从图片库选择一个图片</h3>
 </ion-content>
 
 <ion-footer>

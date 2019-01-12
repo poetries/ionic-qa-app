@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController, ModalController, LoadingController, Platform, ToastController, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, ModalController, LoadingController, Platform, ToastController, ViewController, normalizeURL} from 'ionic-angular';
 import { Storage } from '@ionic/storage'
 
 import { BaseUI } from '../../common/baseui'
@@ -133,11 +133,12 @@ export class HeadfacePage   extends BaseUI {
     return newFileName
   }
   // 处理图片的路径为可以上传的路径
-  pathForImage(img) {
+  public pathForImage(img) {
     if(img === null) {
       return ''
     }else{
-      return cordova.file.dataDirectory + img
+      // 修复图片路径 https://ionicframework.com/docs/wkwebview/
+      return normalizeURL(cordova.file.dataDirectory + img)
     }
   }
   uploadImage() {

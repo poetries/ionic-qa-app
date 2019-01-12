@@ -30,6 +30,10 @@ npm install ionic cordova -g
 
 # 在浏览器打开
 ionic serve
+
+#  在mac下 sudo
+# 将src源文件打包成ios、Android、浏览器等添加的平台
+sudo ionic build
 ```
 
 **2. 环境搭建**
