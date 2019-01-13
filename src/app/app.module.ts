@@ -23,13 +23,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
+import { EmojiProvider } from '../providers/emoji/emoji';
+import { ChatserviceProvider } from '../providers/chatservice/chatservice';
 
 import { File } from '@ionic-native/file';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
-import { EmojiProvider } from '../providers/emoji/emoji';
-import { ChatserviceProvider } from '../providers/chatservice/chatservice';
 
 @NgModule({
   declarations: [
