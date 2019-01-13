@@ -29,7 +29,7 @@
       </ion-row>
     </ion-grid>
   </div>
-  <ion-card *ngFor="let f of feeds">
+  <ion-card *ngFor="let f of feeds" (click)="gotoDetails(f.IdentityId)">
     <ion-item>
       <ion-avatar item-start>
         <img src="{{f.HeadFace}}">

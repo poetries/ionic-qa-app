@@ -7,12 +7,39 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>details</ion-title>
+    <ion-title>{{questions?.ContentTitle}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+        {{questions?.Content}}
+      <p>
+          {{questions?.LikeCount}}&nbsp;个关注&nbsp;&nbsp;{{questions?.CommentCount}}&nbsp;个回答
+      </p>
+      <button ion-button small>
+          <ion-icon name="md-paper-plane"></ion-icon>&nbsp;回答
+      </button>&nbsp;&nbsp;&nbsp;
+      <button ion-button small  color="secondary">
+        <ion-icon name="md-infinite"></ion-icon>&nbsp;关注
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let a of answers">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{a.HeadFace}}">
+        </ion-avatar>
+        <p>
+            {{a.UserNickName}}
+        </p>
+      </ion-item>
+      <ion-card-content>
+        <p>{{a.Content}}</p>
+        <p class="answer_date">{{a.CreateDateTime}}</p>
+      </ion-card-content>
+    </ion-card>
 </ion-content>

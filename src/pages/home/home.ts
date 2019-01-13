@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,ModalController, LoadingController,  ToastController, Tabs} from 'ionic-angular';
 import { QuestionPage } from '../question/question'
+import { DetailsPage } from '../details/details'
 import { ApiProvider } from '../../providers/api/api'
 import { BaseUI } from '../../common/baseui'
 
@@ -48,5 +49,7 @@ export class HomePage   extends BaseUI {
       loading.dismiss()
     },err=>this.errorMessage = <any>err)
   }
-
+  gotoDetails(questionId) {
+    this.navCtrl.push(DetailsPage, {id: questionId})
+  }
 }

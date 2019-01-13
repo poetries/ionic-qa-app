@@ -64,6 +64,13 @@ export class ApiProvider {
     return this.getUrlReturn(this.apiUrlQuestionSave+'?userid='+userId + '&title=' + title + '&content=' + content)
   }
   /**
+   * 
+   * @param id 获取问题的详情
+   */
+  getQuestion(id):Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlGetQuestion+'?id='+id)
+  }
+  /**
    * 请求首页feeds
    */
   getFeeds():Observable<string[]> {
