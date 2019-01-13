@@ -19,6 +19,8 @@ import { Storage } from '@ionic/storage'
 export class AnswerPage  extends BaseUI {
 
   errorMessage: any;
+  id: string;
+  content: string;
 
   constructor(
     public navCtrl: NavController, 
@@ -30,12 +32,31 @@ export class AnswerPage  extends BaseUI {
     public toastCtrl: ToastController,
   ) {
     super()
+    this.id = navParams.get('id') // 接收传递过来的参数
 }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AnswerPage');
   }
   dismiss() {
     this.ViewCtr.dismiss()
+  }
+  submitAnswer() {
+    this.storage.get('UserId').then(userId=>{
+      if(userId !==null) {
+        let loading = super.showLoading(this.loadingCtr, '提交中...')
+        this.api.answer(userId, this.id, this.content).subscribe(data=>{
+          if(data['Status'] == 'OK') {
+            loading.dismissAll()
+            this.dismiss()
+          }else{
+            loading.dismissAll()
+            super.showToast(this.toastCtrl, data['StatusContent'])
+          }
+        },error=>this.errorMessage = <any>error)
+      }else {
+        super.showToast(this.toastCtrl, '请登录后再发布回答...')
+      }
+    })
   }
 
 }

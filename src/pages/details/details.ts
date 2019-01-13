@@ -54,6 +54,8 @@ export class DetailsPage  extends BaseUI {
           this.answers = d['Answers']
           this.isFavourite = d['IsFavourite']
           this.isMyQuestion = d['OwnUserId'] == userId
+
+          loading.dismiss()
         },error=>this.errorMessage = <any>error)
       }
      })
@@ -73,6 +75,10 @@ export class DetailsPage  extends BaseUI {
     let modal = this.ModalCtrl.create(AnswerPage, {
       id: this.id
     })
+    modal.onDidDismiss(()=>{
+      // 刷新页面
+      this.loadQuestions(this.id)
+  })
     modal.present()
   }
 }

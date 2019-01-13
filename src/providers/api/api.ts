@@ -49,25 +49,51 @@ export class ApiProvider {
   private apiUrlAnswer = 'https://imoocqa.gugujiankong.com/api/question/answer'
   private apiUrlSaveFavourite = 'https://imoocqa.gugujiankong.com/api/question/savefavourite'
 
+  /**
+   * 登录
+   * @param mobile 
+   * @param password 
+   */
   login(mobile,password):Observable<string[]>{
     return this.getUrlReturn(this.apiUrlLogin+'?mobile='+mobile+'&password='+password)
   }
 
+  /**
+   * 注册
+   * @param mobile 
+   * @param nickname 
+   * @param password 
+   */
   register(mobile,nickname,password):Observable<string[]>{
     return this.getUrlReturn(this.apiUrlRegister+'?mobile='+mobile+ '&nickname='+ nickname +'&password='+password)
   }
+  /**
+   * 获取用户信息
+   * @param userId 
+   */
   getUserInfo(userId) :Observable<string[]>{
     return this.getUrlReturn(this.apiUrlUserInfo+'?userid='+userId)
   }
+  /**
+   * 更新昵称
+   * @param userId 
+   * @param nickname 
+   */
   updateNickName(userId, nickname) :Observable<string[]>{
     return this.getUrlReturn(this.apiUrlUpdateNickName+'?userid='+userId + '&nickname=' + nickname)
   }
+  /**
+   * 保存问题
+   * @param userId 
+   * @param title 
+   * @param content 
+   */
   saveQuestion(userId, title, content):Observable<string[]> {
     return this.getUrlReturn(this.apiUrlQuestionSave+'?userid='+userId + '&title=' + title + '&content=' + content)
   }
   /**
-   * 
-   * @param id 获取问题的详情
+   * 获取问题的详情
+   * @param id 
    */
   getQuestion(id):Observable<string[]> {
     return this.getUrlReturn(this.apiUrlGetQuestion+'?id='+id)
@@ -94,10 +120,14 @@ export class ApiProvider {
   saveFavourite(questionId, userId):Observable<string[]> {
     return this.getUrlReturn(this.apiUrlSaveFavourite+'?userid='+userId + '&questionid=' + questionId)
   }
-
-  private extractData(res) { 
-    let body = res.body;
-    return JSON.parse(body) || {};
+  /**
+   * 提交回答
+   * @param questionId 
+   * @param userId 
+   * @param content 
+   */
+  answer(userId, questionId, content):Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlAnswer+'?userid='+userId + '&questionid=' + questionId + '&content=' + content)
   }
 
   // @todo 

@@ -13,11 +13,19 @@
               <ion-icon name="md-close" showWhen="android"></ion-icon>
             </button>
           </ion-buttons>
+          <ion-buttons end>
+              <button ion-button (click)="submitAnswer()">
+                <span ion-text color="primary" showWhen="ios">发布</span>
+                <ion-icon name="md-add-circle" showWhen="android"></ion-icon>
+              </button>
+            </ion-buttons>
     </ion-navbar>
-
 </ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>请输入回答内容</ion-label>
+      <ion-textarea rows="5" type="text" class="textarea" [(ngModel)]="content"></ion-textarea>
+    </ion-item>
+  </ion-list>
 </ion-content>
