@@ -27,3 +27,26 @@
     </div>
   </div>
 </ion-content>
+
+<ion-footer no-border style="height: 55px">
+  <ion-row>
+    <ion-col col-2>
+      <button ion-button clear ion-only item-right  (click)="switchEmojiPicker()">
+        <ion-icon name="md-happy"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-8>
+      <ion-textarea
+        #chatInput
+        (keyup.enter)="sendMessage()"
+        (focus)="focus()"
+        placeholder="输入内容"></ion-textarea>
+    </ion-col>
+    <ion-col col-2>
+      <button ion-button clear ion-only item-right (click)="sendMessage()">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+  <!-- <emojipicker *ngIf="isOpenEmojiPicker" [(ngModel)]="editorMessage"></emojipicker> -->
+</ion-footer>

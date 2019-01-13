@@ -17,6 +17,8 @@ export class ChatdetailsPage {
 
   chatUserName: string;
   userid: string;
+  editorMessage: any;
+  isOpenEmojiPicker: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.chatUserName = navParams.get('username')
@@ -25,6 +27,15 @@ export class ChatdetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChatdetailsPage');
+  }
+  switchEmojiPicker() {
+
+  }
+  sendMessage() {
+
+  }
+  focus() {
+
   }
 
 }
