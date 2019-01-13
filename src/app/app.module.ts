@@ -28,6 +28,7 @@ import { File } from '@ionic-native/file';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
+import { EmojiProvider } from '../providers/emoji/emoji';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { FilePath } from '@ionic-native/file-path';
     File,
     Camera,
     Transfer,
-    FilePath
+    FilePath,
+    EmojiProvider
   ]
 })
 export class AppModule {}

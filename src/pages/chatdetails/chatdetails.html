@@ -38,6 +38,7 @@
     <ion-col col-8>
       <ion-textarea
         #chatInput
+        [(ngModel)]="editorMessage"
         (keyup.enter)="sendMessage()"
         (focus)="focus()"
         placeholder="输入内容"></ion-textarea>
