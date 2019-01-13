@@ -20,11 +20,11 @@
       <p>
           {{questions?.LikeCount}}&nbsp;个关注&nbsp;&nbsp;{{questions?.CommentCount}}&nbsp;个回答
       </p>
-      <button ion-button small>
+      <button ion-button small [disabled]="isMyQuestion">
           <ion-icon name="md-paper-plane"></ion-icon>&nbsp;回答
       </button>&nbsp;&nbsp;&nbsp;
-      <button ion-button small  color="secondary">
-        <ion-icon name="md-infinite"></ion-icon>&nbsp;关注
+      <button ion-button small  color="secondary" (click)="saveFavourite()">
+        <ion-icon name="md-infinite"></ion-icon>&nbsp; {{isFavourite ? '取消关注': '关注'}}
       </button>
     </ion-card-content>
   </ion-card>

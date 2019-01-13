@@ -22,6 +22,9 @@ export class DetailsPage  extends BaseUI {
   questions: string[];
   answers: string[];
   errorMessage: any;
+  isFavourite: boolean;
+  userId: string;
+  isMyQuestion: boolean;
 
   constructor(
     public navCtrl: NavController, 
@@ -40,11 +43,28 @@ export class DetailsPage  extends BaseUI {
    this.loadQuestions(this.id)
   }
   loadQuestions(id) {
-    let loading = super.showLoading(this.loadingCtr, '加载中...')
-    this.api.getQuestion(this.id).subscribe(d=>{
-      this.questions = d
-      this.answers = d['Answers']
+    this.storage.get('UserId').then(userId=>{
+      if(userId !==null){
+        let loading = super.showLoading(this.loadingCtr, '加载中...')
+        this.api.getQuestionWithUser(this.id, userId).subscribe(d=>{
+          this.userId = userId
+          this.questions = d
+          this.answers = d['Answers']
+          this.isFavourite = d['IsFavourite']
+          this.isMyQuestion = d['OwnUserId'] == userId
+        },error=>this.errorMessage = <any>error)
+      }
+     })
+   
+  }
+  saveFavourite() {
+    let loading = super.showLoading(this.loadingCtr, '请求中...')
+    this.api.saveFavourite(this.id, this.userId).subscribe(d=>{
+      if(d['Status'] == 'OK') {
+        loading.dismiss()
+        super.showToast(this.toastCtrl, this.isFavourite ? '取消关注成功': '关注问题成功')
+        this.isFavourite = !this.isFavourite
+      }
     },error=>this.errorMessage = <any>error)
   }
-
 }

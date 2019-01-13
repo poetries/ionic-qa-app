@@ -43,9 +43,11 @@ export class ApiProvider {
 
   // question
   private apiUrlQuestionSave = 'https://imoocqa.gugujiankong.com/api/question/save'
-  private apiUrlQuestionList = 'https://imoocqa.gugujiankong.com/api/question/list?index=1&num=10' //@todo 有问题这里不完整
+  private apiUrlQuestionList = 'https://imoocqa.gugujiankong.com/api/question/list?index=1&num=10' 
   private apiUrlGetQuestion = 'https://imoocqa.gugujiankong.com/api/question/get'
+  private apiUrlGetQuestionWithUser = 'https://imoocqa.gugujiankong.com/api/question/getwithuser' 
   private apiUrlAnswer = 'https://imoocqa.gugujiankong.com/api/question/answer'
+  private apiUrlSaveFavourite = 'https://imoocqa.gugujiankong.com/api/question/savefavourite'
 
   login(mobile,password):Observable<string[]>{
     return this.getUrlReturn(this.apiUrlLogin+'?mobile='+mobile+'&password='+password)
@@ -71,10 +73,26 @@ export class ApiProvider {
     return this.getUrlReturn(this.apiUrlGetQuestion+'?id='+id)
   }
   /**
+   * 获取问题详情，传递userId 获取用户是否关注此问题
+   * @param questionId 
+   * @param userId 
+   */
+  getQuestionWithUser(questionId, userId):Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlGetQuestionWithUser+'?userid='+userId + '&id=' + questionId)
+  }
+  /**
    * 请求首页feeds
    */
   getFeeds():Observable<string[]> {
     return this.getUrlReturn(this.apiUrlFeeds)
+  }
+  /**
+   * 取消关注 关注问题
+   * @param questionId 
+   * @param userId 
+   */
+  saveFavourite(questionId, userId):Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlSaveFavourite+'?userid='+userId + '&questionid=' + questionId)
   }
 
   private extractData(res) { 
