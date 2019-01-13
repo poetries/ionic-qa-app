@@ -2,16 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
-  Generated class for the EmojiProvider provider.
+  Generated class for the ChatserviceProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 @Injectable()
-export class EmojiProvider {
+export class ChatserviceProvider {
 
   constructor(public http: HttpClient) {
-    
+    console.log('Hello ChatserviceProvider Provider');
   }
 
 }

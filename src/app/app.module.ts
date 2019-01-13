@@ -29,6 +29,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { EmojiProvider } from '../providers/emoji/emoji';
+import { ChatserviceProvider } from '../providers/chatservice/chatservice';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { EmojiProvider } from '../providers/emoji/emoji';
     Camera,
     Transfer,
     FilePath,
-    EmojiProvider
+    EmojiProvider,
+    ChatserviceProvider
   ]
 })
 export class AppModule {}
