@@ -5,14 +5,18 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>聊天</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <ion-item navPush="ChatdetailsPage" [navParams]="userinfo">
+      <ion-avatar>
+        <img src="https://blog.poetries.top/images/avatar.jpg">
+      </ion-avatar>
+      <h2>poetries</h2>
+      <p>聊天组件开发</p>
+    </ion-item>
+  </ion-list>
 </ion-content>
