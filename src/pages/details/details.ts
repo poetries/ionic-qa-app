@@ -44,7 +44,7 @@ export class DetailsPage  extends BaseUI {
    this.id = this.navParams.get('id')
    this.loadQuestions(this.id)
   }
-  loadQuestions(id) {
+  loadQuestions(id:string) {
     this.storage.get('UserId').then(userId=>{
       if(userId !==null){
         let loading = super.showLoading(this.loadingCtr, '加载中...')

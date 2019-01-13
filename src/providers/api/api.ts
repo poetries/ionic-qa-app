@@ -43,6 +43,8 @@ export class ApiProvider {
 
   // question
   private apiUrlQuestionSave = 'https://imoocqa.gugujiankong.com/api/question/save'
+
+  // @todofix 接口有问题
   private apiUrlQuestionList = 'https://imoocqa.gugujiankong.com/api/question/list?index=1&num=10' 
   private apiUrlGetQuestion = 'https://imoocqa.gugujiankong.com/api/question/get'
   private apiUrlGetQuestionWithUser = 'https://imoocqa.gugujiankong.com/api/question/getwithuser' 
@@ -110,6 +112,12 @@ export class ApiProvider {
    * 请求首页feeds
    */
   getFeeds():Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlFeeds)
+  }
+  /**
+   * 发现页面问题列表
+   */
+  getQuestionsList():Observable<string[]> {
     return this.getUrlReturn(this.apiUrlFeeds)
   }
   /**

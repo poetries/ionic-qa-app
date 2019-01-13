@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController,ModalController, LoadingController,  ToastController, Tabs} from 'ionic-angular';
+import { DetailsPage } from '../details/details'
+import { ApiProvider } from '../../providers/api/api'
+import { BaseUI } from '../../common/baseui'
 
 /**
  * Generated class for the DiscoveryPage page.
@@ -8,18 +11,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-discovery',
   templateUrl: 'discovery.html',
 })
-export class DiscoveryPage {
+export class DiscoveryPage  extends BaseUI {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  questions: string[];
+  errorMessage: string;
+
+  constructor(
+    public navCtrl: NavController,
+    public loadingCtr: LoadingController,
+    public api: ApiProvider,
+    public toastCtrl: ToastController,
+    public ModalCtrl: ModalController 
+    ) {
+      super()
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DiscoveryPage');
+    this.getQuestions()
   }
-
+  getQuestions() {
+    let loading = super.showLoading(this.loadingCtr, '加载中...')
+    this.api.getQuestionsList().subscribe(data=>{
+      this.questions = data
+      loading.dismiss()
+    },err=>this.errorMessage = <any>err)
+  }
+  gotoDetails(questionId) {
+    this.navCtrl.push(DetailsPage, {id: questionId})
+  }
+  doRefresh(refresher) {
+    this.getQuestions()
+    refresher.complete()
+  }
 }
