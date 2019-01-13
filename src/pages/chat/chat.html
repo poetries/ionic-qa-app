@@ -11,11 +11,11 @@
 </ion-header>
 <ion-content>
   <ion-list>
-    <ion-item navPush="ChatdetailsPage" [navParams]="userinfo">
+    <ion-item [navPush]="ChatdetailsPage" [navParams]="user" *ngFor="let user of users">
       <ion-avatar>
-        <img src="https://blog.poetries.top/images/avatar.jpg">
+        <img src="{{user.avatar}}">
       </ion-avatar>
-      <h2>poetries</h2>
+      <h2>{{user.username}}</h2>
       <p>聊天组件开发</p>
     </ion-item>
   </ion-list>

@@ -8,14 +8,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-chatdetails',
   templateUrl: 'chatdetails.html',
 })
 export class ChatdetailsPage {
 
+  chatUserName: string;
+  userid: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.chatUserName = navParams.get('username')
+    this.userid = navParams.get('userid')
   }
 
   ionViewDidLoad() {
