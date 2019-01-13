@@ -10,6 +10,9 @@ import { BaseUI } from '../../common/baseui'
 })
 export class HomePage   extends BaseUI {
 
+  feeds: string[];
+  errorMessage: string;
+
   constructor(
     public navCtrl: NavController,
     public loadingCtr: LoadingController,
@@ -19,6 +22,9 @@ export class HomePage   extends BaseUI {
     ) {
       super()
   }
+  ionViewDidLoad() {
+    this.getFeeds()
+  }
   gotoQuestion() {
     let modal = this.ModalCtrl.create(QuestionPage)
     modal.present()
@@ -26,9 +32,21 @@ export class HomePage   extends BaseUI {
   gotoChat() {
     this.selectTab(2)
   }
+  /**
+   * 选定指定的tab
+   * @param index 
+   */
   selectTab(index:number) {
     let t:Tabs = this.navCtrl.parent;
     t.select(index)
+  }
+  
+  getFeeds() {
+    let loading = super.showLoading(this.loadingCtr, '加载中...')
+    this.api.getFeeds().subscribe(data=>{
+      this.feeds = data
+      loading.dismiss()
+    },err=>this.errorMessage = <any>err)
   }
 
 }

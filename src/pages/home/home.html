@@ -29,24 +29,24 @@
       </ion-row>
     </ion-grid>
   </div>
-  <ion-card>
+  <ion-card *ngFor="let f of feeds">
     <ion-item>
       <ion-avatar item-start>
-        <img src="">
+        <img src="{{f.HeadFace}}">
       </ion-avatar>
       <p>
-        poetries回答了该问题
+          {{f.UserNickName}}回答了该问题
         <ion-icon class="more-button" name="more"></ion-icon>
       </p>
     </ion-item>
-    <h2>文章标题</h2>
+    <h2>{{f.ContentTitle}}</h2>
     <ion-card-content>
-      <p>文章内容</p>
+      <p>{{f.ContentSummary}}</p>
     </ion-card-content>
     <ion-row>
       <ion-col col-8 center text-left>
         <ion-note>
-          100&nbsp;赞同&nbsp;&nbsp;.&nbsp;&nbsp;20&nbsp;评论&nbsp;&nbsp;.&nbsp;&nbsp;关注
+            {{f.LikeCount}}&nbsp;赞同&nbsp;&nbsp;.&nbsp;&nbsp;{{f.CommentCount}}&nbsp;评论&nbsp;&nbsp;.&nbsp;&nbsp;关注
         </ion-note>
       </ion-col>
       <ion-col col-4></ion-col>

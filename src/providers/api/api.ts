@@ -63,6 +63,12 @@ export class ApiProvider {
   saveQuestion(userId, title, content):Observable<string[]> {
     return this.getUrlReturn(this.apiUrlQuestionSave+'?userid='+userId + '&title=' + title + '&content=' + content)
   }
+  /**
+   * 请求首页feeds
+   */
+  getFeeds():Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlFeeds)
+  }
 
   private extractData(res) { 
     let body = res.body;
