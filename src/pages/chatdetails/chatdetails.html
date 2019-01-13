@@ -28,7 +28,7 @@
   </div>
 </ion-content>
 
-<ion-footer no-border style="height: 55px">
+<ion-footer no-border [style.height]="isOpenEmojiPicker ? '255px': '55px' ">
   <ion-row>
     <ion-col col-2>
       <button ion-button clear ion-only item-right  (click)="switchEmojiPicker()">
@@ -49,5 +49,5 @@
       </button>
     </ion-col>
   </ion-row>
-  <!-- <emojipicker *ngIf="isOpenEmojiPicker" [(ngModel)]="editorMessage"></emojipicker> -->
+  <emojipicker *ngIf="isOpenEmojiPicker" [(ngModel)]="editorMessage"></emojipicker>
 </ion-footer>

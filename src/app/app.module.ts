@@ -23,8 +23,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
-import { EmojiProvider } from '../providers/emoji/emoji';
 import { ChatserviceProvider } from '../providers/chatservice/chatservice';
+
+// 导入表情emoji
+import { EmojiProvider } from '../providers/emoji/emoji';
+import { ComponentsModule } from '../components/components.module'
 
 import { File } from '@ionic-native/file';
 import { Camera, CameraOptions } from '@ionic-native/camera';
@@ -50,11 +53,12 @@ import { FilePath } from '@ionic-native/file-path';
     TabsPage
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: '返回'
     }),
+    ComponentsModule,
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
@@ -84,8 +88,8 @@ import { FilePath } from '@ionic-native/file-path';
     Camera,
     Transfer,
     FilePath,
-    EmojiProvider,
-    ChatserviceProvider
+    ChatserviceProvider,
+    EmojiProvider
   ]
 })
 export class AppModule {}
