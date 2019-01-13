@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class ChatserviceProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello ChatserviceProvider Provider');
+    
   }
 
 }
