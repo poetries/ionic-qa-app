@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,ModalController, LoadingController,  ToastController } from 'ionic-angular';
+import { NavController,ModalController, LoadingController,  ToastController, Tabs} from 'ionic-angular';
 import { QuestionPage } from '../question/question'
 import { ApiProvider } from '../../providers/api/api'
 import { BaseUI } from '../../common/baseui'
@@ -22,6 +22,13 @@ export class HomePage   extends BaseUI {
   gotoQuestion() {
     let modal = this.ModalCtrl.create(QuestionPage)
     modal.present()
+  }
+  gotoChat() {
+    this.selectTab(2)
+  }
+  selectTab(index:number) {
+    let t:Tabs = this.navCtrl.parent;
+    t.select(index)
   }
 
 }

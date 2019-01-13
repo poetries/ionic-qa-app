@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-searchbar placeholder="搜索：如何高效学习Ionic开发"></ion-searchbar>
-        <ion-icon name='text' class="top_header_msg_icon"  (tap)="gotoQuestion()"></ion-icon>
+        <ion-icon name='text' class="top_header_msg_icon"  (tap)="gotoChat()"></ion-icon>
     </ion-toolbar>
 </ion-header>
 
@@ -29,4 +29,27 @@
       </ion-row>
     </ion-grid>
   </div>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="">
+      </ion-avatar>
+      <p>
+        poetries回答了该问题
+        <ion-icon class="more-button" name="more"></ion-icon>
+      </p>
+    </ion-item>
+    <h2>文章标题</h2>
+    <ion-card-content>
+      <p>文章内容</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col col-8 center text-left>
+        <ion-note>
+          100&nbsp;赞同&nbsp;&nbsp;.&nbsp;&nbsp;20&nbsp;评论&nbsp;&nbsp;.&nbsp;&nbsp;关注
+        </ion-note>
+      </ion-col>
+      <ion-col col-4></ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>
