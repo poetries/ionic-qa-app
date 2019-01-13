@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, LoadingController, ToastController  } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, ViewController, LoadingController, ToastController  } from 'ionic-angular';
 import { BaseUI } from '../../common/baseui'
 import { ApiProvider } from '../../providers/api/api'
 import { Storage } from '@ionic/storage'
+import { AnswerPage } from '../answer/answer'
 
 /**
  * Generated class for the DetailsPage page.
@@ -32,6 +33,7 @@ export class DetailsPage  extends BaseUI {
     public ViewCtr: ViewController,
     public loadingCtr: LoadingController,
     public storage: Storage,
+    public ModalCtrl: ModalController,
     public api: ApiProvider,
     public toastCtrl: ToastController,
   ) {
@@ -66,5 +68,11 @@ export class DetailsPage  extends BaseUI {
         this.isFavourite = !this.isFavourite
       }
     },error=>this.errorMessage = <any>error)
+  }
+  showAnswerPage() {
+    let modal = this.ModalCtrl.create(AnswerPage, {
+      id: this.id
+    })
+    modal.present()
   }
 }

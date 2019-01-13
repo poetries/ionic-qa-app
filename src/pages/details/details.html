@@ -15,12 +15,12 @@
 
 <ion-content>
   <ion-card>
-    <ion-card-content>
+    <ion-card-content *ngIf="questions">
         {{questions?.Content}}
       <p>
           {{questions?.LikeCount}}&nbsp;个关注&nbsp;&nbsp;{{questions?.CommentCount}}&nbsp;个回答
       </p>
-      <button ion-button small [disabled]="isMyQuestion">
+      <button ion-button small [disabled]="isMyQuestion" (click)="showAnswerPage()">
           <ion-icon name="md-paper-plane"></ion-icon>&nbsp;回答
       </button>&nbsp;&nbsp;&nbsp;
       <button ion-button small  color="secondary" (click)="saveFavourite()">

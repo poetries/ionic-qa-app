@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, LoadingController, ToastController  } from 'ionic-angular';
+import { BaseUI } from '../../common/baseui'
+import { ApiProvider } from '../../providers/api/api'
+import { Storage } from '@ionic/storage'
 
 /**
  * Generated class for the AnswerPage page.
@@ -8,18 +11,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-answer',
   templateUrl: 'answer.html',
 })
-export class AnswerPage {
+export class AnswerPage  extends BaseUI {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  errorMessage: any;
 
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public ViewCtr: ViewController,
+    public loadingCtr: LoadingController,
+    public storage: Storage,
+    public api: ApiProvider,
+    public toastCtrl: ToastController,
+  ) {
+    super()
+}
   ionViewDidLoad() {
     console.log('ionViewDidLoad AnswerPage');
+  }
+  dismiss() {
+    this.ViewCtr.dismiss()
   }
 
 }

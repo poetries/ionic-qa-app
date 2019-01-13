@@ -5,10 +5,15 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>answer</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>回答</ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+              <span ion-text color="primary" showWhen="ios">取消</span>
+              <ion-icon name="md-close" showWhen="android"></ion-icon>
+            </button>
+          </ion-buttons>
+    </ion-navbar>
 
 </ion-header>
 
