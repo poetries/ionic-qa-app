@@ -1,18 +1,7 @@
 language: node_js
 node_js: stable
 
-# S: Build Lifecycle
-# install:
-  # - npm install
-
-
-#before_script:
- # - npm install -g gulp
-
-# script:
-  # - npm run build
-
-after_script:
+script:
   - cd  ./www
   - git init
   - git config user.name "poetries"
@@ -20,7 +9,6 @@ after_script:
   - git add -A
   - git commit -m "Update docs"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
-# E: Build LifeCycle
 
 branches:
   only:
