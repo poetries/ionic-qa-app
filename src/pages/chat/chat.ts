@@ -22,24 +22,24 @@ export class ChatPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.users = [
     {
-      userid: '5c37377c647eb41acc32c4a0',
+      userid: '15474322092123',
       username: 'poetries',
       avatar: 'https://blog.poetries.top/images/avatar.jpg'
     },
     {
       userid: '15474322092123',
       username: '静观流叶',
-      avatar: 'http://img.mukewang.com/user/57a322f00001e4ae02560256-40-40.jpg'
+      avatar: 'http://life.poetries.top/img/me.JPG'
     },
     {
-      userid: '5c37377c647eb41acc32c4a0',
+      userid: '15474322092123',
       username: '小明',
       avatar: 'https://blog.poetries.top/images/avatar.jpg'
     },
     {
       userid: '15474322092123',
       username: '小叶',
-      avatar: 'http://img.mukewang.com/user/57a322f00001e4ae02560256-40-40.jpg'
+      avatar: 'http://life.poetries.top/img/me.JPG'
     }
   ]
     this.ChatdetailsPage = ChatdetailsPage;

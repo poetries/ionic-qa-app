@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Content, TextInput } from 'ionic-angular';
 import { ChatserviceProvider, ChatMessage  } from  '../../providers/chatservice/chatservice'
 import { Storage } from '@ionic/storage'
 import { ApiProvider } from '../../providers/api/api'
@@ -26,10 +26,12 @@ export class ChatdetailsPage {
   userName: string;
   userImgUrl: string;
 
-  editorMessage: any;
+  editorMessage: string;
   isOpenEmojiPicker: boolean;
   messageList: ChatMessage[] = [];
   errorMsg: string;
+  @ViewChild(Content) content:Content;
+  @ViewChild('chatInput') messageInput:TextInput; // 通过#chatInput定义 获取模板的dom
 
   constructor(
     public navCtrl: NavController, 
@@ -67,8 +69,11 @@ export class ChatdetailsPage {
   sendMessage() {
 
   }
+  // 光标移到textarea上
   focus() {
-
+    this.isOpenEmojiPicker = false; // 关闭emoji选择框
+    this.content.resize() // 重新计算尺寸 布局
+    this.scrollToBottom() // 消息滚动到底部
   }
   /**
    * 获取消息列表
@@ -79,7 +84,11 @@ export class ChatdetailsPage {
     }).catch(err=>console.error(err))
   }
   scrollToBottom():any {
-
+    setTimeout(() => {
+      if(this.content.scrollToBottom) {
+        this.content.scrollToBottom()
+      }
+    }, 400);
   }
 
 }
