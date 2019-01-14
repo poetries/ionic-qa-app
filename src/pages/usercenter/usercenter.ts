@@ -6,7 +6,7 @@ import { LoginPage } from '../login/login'
 import { UserPage } from '../user/user'
 import { UserdatalistPage } from '../userdatalist/userdatalist';
 import { ApiProvider } from '../../providers/api/api'
-
+import { SettingsProvider } from '../../providers/settings/settings';
 
 /**
  * Generated class for the MorePage page.
@@ -25,6 +25,7 @@ export class UserCenterPage  extends BaseUI {
   public logined: boolean = false;
   public headface: string = "http://img.mukewang.com/user/57a322f00001e4ae02560256-40-40.jpg?1547178979710";
   public userinfo: any;
+  public selectedTheme: string;
 
 
   constructor(public navCtrl: NavController, 
@@ -32,9 +33,12 @@ export class UserCenterPage  extends BaseUI {
                       public storage: Storage,
                       public loadingCtr: LoadingController,
                       public api: ApiProvider,
+                      public settings: SettingsProvider,
                       public toastCtrl: ToastController,
                       public ModalCtrl: ModalController ) {
                         super()
+                         // 获取主题
+                        this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val)
   }
 
   showModal(){
@@ -74,5 +78,18 @@ export class UserCenterPage  extends BaseUI {
   }
   gotoDataList(type: string) {
     this.navCtrl.push(UserdatalistPage, {'dataType': type})
+  }
+  toggleChangeTheme() {
+    if(this.selectedTheme == 'dark-theme') {
+      this.settings.setActiveTheme('light-theme')
+    }else{
+      this.settings.setActiveTheme('dark-theme')
+    }
+  }
+  gotoScanQRCode() {
+
+  }
+  gotoVersions() {
+
   }
 }

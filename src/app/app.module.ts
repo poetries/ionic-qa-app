@@ -36,6 +36,7 @@ import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 
 import { RelativetimePipe } from '../pipes/relativetime/relativetime'
+import { SettingsProvider } from '../providers/settings/settings';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { RelativetimePipe } from '../pipes/relativetime/relativetime'
     Transfer,
     FilePath,
     ChatserviceProvider,
-    EmojiProvider
+    EmojiProvider,
+    SettingsProvider
   ]
 })
 export class AppModule {}
