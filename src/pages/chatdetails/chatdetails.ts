@@ -19,7 +19,7 @@ import { ApiProvider } from '../../providers/api/api'
 export class ChatdetailsPage {
 
   chatUserName: string;
-  chatUserid: string;
+  chatUserId: string;
 
   // 自己的信息
   userId: string;
@@ -39,7 +39,7 @@ export class ChatdetailsPage {
     public chatService: ChatserviceProvider
   ) {
     this.chatUserName = navParams.get('username')
-    this.chatUserid = navParams.get('userid')
+    this.chatUserId = navParams.get('userid')
   }
 
   ionViewDidEnter() {
@@ -47,7 +47,7 @@ export class ChatdetailsPage {
       if(val!=null){
         // 加载用户数据
         this.api.getUserInfo(val).subscribe((userinfo:any)=>{
-          this.userId = '123321'
+          this.userId = '5c37377c647eb41acc32c4a0'
           this.userName = userinfo['UserNickName']
           this.userImgUrl = userinfo['UserHeadface'] + '?' + (new Date()).valueOf()
         })
