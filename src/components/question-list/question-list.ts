@@ -5,12 +5,6 @@ import { BaseUI } from '../../common/baseui';
 import { ApiProvider } from '../../providers/api/api';
 import { DetailsPage } from '../../pages/details/details';
 
-/**
- * Generated class for the QuestionListComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'question-list',
   templateUrl: 'question-list.html'
@@ -21,7 +15,7 @@ export class QuestionListComponent  extends BaseUI {
   questions: string[];
 
   // datatype 外部传递进来，dataSourceType 本地接收之后的参数命名
-  @Input('datatype') dataSourceType;
+  @Input('dataType') dataSourceType;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,

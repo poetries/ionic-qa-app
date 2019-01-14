@@ -40,15 +40,15 @@
           <ion-list-header>
             我的信息
           </ion-list-header>
-          <button ion-item>
+          <button ion-item (click)="gotoDataList('question')">
             <ion-icon name="paper" item-start color="primary"></ion-icon>
             <ion-label>我的提问</ion-label>
           </button>
-          <button ion-item>
+          <button ion-item (click)="gotoDataList('favourite')">
               <ion-icon name="star" item-start color="orange"></ion-icon>
               <ion-label>我的关注</ion-label>
           </button>
-          <button ion-item>
+          <button ion-item (click)="gotoDataList('answer')">
               <ion-icon name="disc" item-start color="secondary"></ion-icon>
               <ion-label>我的回答</ion-label>
           </button>

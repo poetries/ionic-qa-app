@@ -15,6 +15,7 @@ import { DiscoveryPage } from '../pages/discovery/discovery';
 import { ChatPage } from '../pages/chat/chat';
 import { RegisterPage } from '../pages/register/register';
 import { UserPage } from '../pages/user/user';
+import { UserdatalistPage } from '../pages/userdatalist/userdatalist';
 import { NotificationPage } from '../pages/notification/notification';
 import { UserCenterPage } from '../pages/usercenter/usercenter';
 import { LoginPage } from '../pages/login/login';
@@ -49,6 +50,7 @@ import { RelativetimePipe } from '../pipes/relativetime/relativetime'
     ChatPage,
     RegisterPage,
     UserPage,
+    UserdatalistPage,
     NotificationPage,
     UserCenterPage,
     LoginPage,
@@ -72,6 +74,7 @@ import { RelativetimePipe } from '../pipes/relativetime/relativetime'
     ChatPage,
     RegisterPage,
     UserPage,
+    UserdatalistPage,
     NotificationPage,
     UserCenterPage,
     HeadfacePage,

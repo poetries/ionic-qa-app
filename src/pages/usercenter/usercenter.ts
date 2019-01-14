@@ -4,7 +4,9 @@ import { Storage } from '@ionic/storage'
 import { BaseUI } from '../../common/baseui'
 import { LoginPage } from '../login/login'
 import { UserPage } from '../user/user'
+import { UserdatalistPage } from '../userdatalist/userdatalist';
 import { ApiProvider } from '../../providers/api/api'
+
 
 /**
  * Generated class for the MorePage page.
@@ -44,7 +46,7 @@ export class UserCenterPage  extends BaseUI {
     modal.present()
   }
   
-  ionViewDidEnter() {
+  ionViewDidLoad() {
     this.loadUserPage()
   }
   loadUserPage() {
@@ -69,5 +71,8 @@ export class UserCenterPage  extends BaseUI {
   }
   gotoUserPage() {
     this.navCtrl.push(UserPage)
+  }
+  gotoDataList(type: string) {
+    this.navCtrl.push(UserdatalistPage, {'dataType': type})
   }
 }
