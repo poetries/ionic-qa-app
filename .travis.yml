@@ -2,7 +2,7 @@ language: node_js
 node_js: stable
 
 script:
-  - cd  ./www
+  - cd  ./platforms/browser/www
   - git init
   - git config user.name "poetries"
   - git config user.email "jingguanliuye@gmail.com"

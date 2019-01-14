@@ -42,5 +42,22 @@ sudo ionic build
 
 ### screenShot
 
-![image.png](https://upload-images.jianshu.io/upload_images/1480597-af653cf43d824c6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-fffba2838173ce04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-02685215c7c2e312.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-6e0f5690e22e94e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-dd4f409adc9e5c82.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-221f76fa88b0547e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-2efe1ab97090d95a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-c7c46f6fa1f7d941.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-1dad1e6ac2acfe26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-7ab75bc7ad93c4d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
