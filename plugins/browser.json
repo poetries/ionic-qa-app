@@ -36,6 +36,9 @@
     },
     "cordova-plugin-filepath": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "io.ionic.starter"
     }
   },
   "dependent_plugins": {}

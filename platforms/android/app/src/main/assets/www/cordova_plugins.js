@@ -261,6 +261,14 @@ module.exports = [
     "clobbers": [
       "window.FilePath"
     ]
+  },
+  {
+    "id": "cordova-plugin-app-version.AppVersionPlugin",
+    "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
+    "pluginId": "cordova-plugin-app-version",
+    "clobbers": [
+      "cordova.getAppVersion"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -275,7 +283,8 @@ module.exports.metadata =
   "cordova-plugin-qrscanner": "2.6.0",
   "cordova-plugin-file": "6.0.1",
   "cordova-plugin-file-transfer": "1.7.1",
-  "cordova-plugin-filepath": "1.5.1"
+  "cordova-plugin-filepath": "1.5.1",
+  "cordova-plugin-app-version": "0.1.9"
 };
 // BOTTOM OF METADATA
 });

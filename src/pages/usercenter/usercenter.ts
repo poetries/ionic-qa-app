@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage'
 import { BaseUI } from '../../common/baseui'
 import { LoginPage } from '../login/login'
 import { UserPage } from '../user/user'
+import { VersionsPage } from '../versions/versions'
 import { UserdatalistPage } from '../userdatalist/userdatalist';
 import { ScanPage } from '../scan/scan';
 import { ApiProvider } from '../../providers/api/api'
@@ -97,6 +98,6 @@ export class UserCenterPage  extends BaseUI {
     this.navCtrl.push(ScanPage, null, {'animate': false})
   }
   gotoVersions() {
-
+    this.navCtrl.push(VersionsPage)
   }
 }

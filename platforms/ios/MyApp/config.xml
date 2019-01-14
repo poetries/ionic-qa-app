@@ -46,6 +46,9 @@
     <feature name="FileTransfer">
         <param name="ios-package" value="CDVFileTransfer" />
     </feature>
+    <feature name="AppVersion">
+        <param name="ios-package" value="AppVersion" />
+    </feature>
     <name>MyApp</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>

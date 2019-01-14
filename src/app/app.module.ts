@@ -18,6 +18,7 @@ import { UserPage } from '../pages/user/user';
 import { UserdatalistPage } from '../pages/userdatalist/userdatalist';
 import { NotificationPage } from '../pages/notification/notification';
 import { UserCenterPage } from '../pages/usercenter/usercenter';
+import { VersionsPage } from '../pages/versions/versions';
 import { ScanPage } from '../pages/scan/scan';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -37,6 +38,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { QRScanner } from '@ionic-native/qr-scanner';
+import { AppVersion } from '@ionic-native/app-version';
 
 import { RelativetimePipe } from '../pipes/relativetime/relativetime'
 import { SettingsProvider } from '../providers/settings/settings';
@@ -58,6 +60,7 @@ import { SettingsProvider } from '../providers/settings/settings';
     UserdatalistPage,
     NotificationPage,
     UserCenterPage,
+    VersionsPage,
     LoginPage,
     ScanPage,
     TabsPage,
@@ -82,6 +85,7 @@ import { SettingsProvider } from '../providers/settings/settings';
     UserPage,
     UserdatalistPage,
     NotificationPage,
+    VersionsPage,
     UserCenterPage,
     HeadfacePage,
     QuestionPage,
@@ -102,6 +106,7 @@ import { SettingsProvider } from '../providers/settings/settings';
     Transfer,
     FilePath,
     QRScanner,
+    AppVersion,
     ChatserviceProvider,
     EmojiProvider,
     SettingsProvider
