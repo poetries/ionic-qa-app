@@ -5,6 +5,7 @@ import { BaseUI } from '../../common/baseui'
 import { LoginPage } from '../login/login'
 import { UserPage } from '../user/user'
 import { UserdatalistPage } from '../userdatalist/userdatalist';
+import { ScanPage } from '../scan/scan';
 import { ApiProvider } from '../../providers/api/api'
 import { SettingsProvider } from '../../providers/settings/settings';
 
@@ -86,8 +87,14 @@ export class UserCenterPage  extends BaseUI {
       this.settings.setActiveTheme('dark-theme')
     }
   }
-  gotoScanQRCode() {
 
+  /**
+   *
+   *跳转到二维码扫描界面，加上'animate': false参数是为了相机能够在整个屏幕显示，否则相机出不来
+   * @memberof UserCenterPage
+   */
+  gotoScanQRCode() {
+    this.navCtrl.push(ScanPage, null, {'animate': false})
   }
   gotoVersions() {
 

@@ -18,6 +18,7 @@ import { UserPage } from '../pages/user/user';
 import { UserdatalistPage } from '../pages/userdatalist/userdatalist';
 import { NotificationPage } from '../pages/notification/notification';
 import { UserCenterPage } from '../pages/usercenter/usercenter';
+import { ScanPage } from '../pages/scan/scan';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -30,13 +31,16 @@ import { ChatserviceProvider } from '../providers/chatservice/chatservice';
 import { EmojiProvider } from '../providers/emoji/emoji';
 import { ComponentsModule } from '../components/components.module'
 
+//  插件
 import { File } from '@ionic-native/file';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
+import { QRScanner } from '@ionic-native/qr-scanner';
 
 import { RelativetimePipe } from '../pipes/relativetime/relativetime'
 import { SettingsProvider } from '../providers/settings/settings';
+
 
 @NgModule({
   declarations: [
@@ -55,6 +59,7 @@ import { SettingsProvider } from '../providers/settings/settings';
     NotificationPage,
     UserCenterPage,
     LoginPage,
+    ScanPage,
     TabsPage,
     RelativetimePipe
   ],
@@ -84,6 +89,7 @@ import { SettingsProvider } from '../providers/settings/settings';
     ChatdetailsPage,
     DetailsPage,
     LoginPage,
+    ScanPage,
     TabsPage
   ],
   providers: [
@@ -95,6 +101,7 @@ import { SettingsProvider } from '../providers/settings/settings';
     Camera,
     Transfer,
     FilePath,
+    QRScanner,
     ChatserviceProvider,
     EmojiProvider,
     SettingsProvider
