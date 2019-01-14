@@ -34,10 +34,10 @@ export class ChatserviceProvider {
    * @memberof ChatserviceProvider
    */
   getMessageList(): Promise<ChatMessage[]> {
-    const url = '../assets/mock/msg-list.json';
+    const url = '../../assets/mock/msg-list.json';
     return this.http.get(url)
       .toPromise()
-      .then((response:any) => response.json().array as ChatMessage[])
+      .then((response:any) => response.array as ChatMessage[])
       .catch(error => Promise.reject(error || '错误信息'));
   }
 

@@ -2,13 +2,13 @@
     "array":[
       {
         "messageId":"1",
-        "userId":"140000198202211138",
+        "userId":"1547432209236",
         "username":"poetries",
         "userImgUrl":"https://blog.poetries.top/images/avatar.jpg",
         "toUserId":"123321",
         "toUserName":"静观流叶",
         "toUserImgUrl":"http://img.mukewang.com/user/57a322f00001e4ae02560256-40-40.jpg",
-        "time":1511071097000,
+        "time":1547432258795,
         "message":"你好，如何测试机器人组件呢？",
         "status":"success"
       },
@@ -20,7 +20,7 @@
         "toUserId":"140000198202211138",
         "toUserName":"poetries",
         "toUserImgUrl":"https://blog.poetries.top/images/avatar.jpg",
-        "time":1511071097000,
+        "time":1547432282559,
         "message":"你可以给我发送任何内容，我会模拟回复内容给你，给你演示聊天组件的完整实现哦~~~",
         "status":"success"
       }
