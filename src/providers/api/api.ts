@@ -49,6 +49,9 @@ export class ApiProvider {
   private apiUrlAnswer = 'https://imoocqa.gugujiankong.com/api/question/answer'
   private apiUrlSaveFavourite = 'https://imoocqa.gugujiankong.com/api/question/savefavourite'
 
+  //notification
+  private apiUrlUserNotifications = "https://imoocqa.gugujiankong.com/api/account/usernotifications";
+  
   /**
    * 登录
    * @param mobile 
@@ -134,6 +137,16 @@ export class ApiProvider {
    */
   answer(userId, questionId, content):Observable<string[]> {
     return this.getUrlReturn(this.apiUrlAnswer+'?userid='+userId + '&questionid=' + questionId + '&content=' + content)
+  }
+  /**
+   * 获取用户的提醒消息
+   * 
+   * @param {any} userId 
+   * @returns {Observable<string[]>} 
+   * @memberof RestProvider
+   */
+  getUserNotifications(userId): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlUserNotifications + "?userid=" + userId);
   }
 
   // @todo 
