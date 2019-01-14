@@ -1,0 +1,62 @@
+{
+  "_from": "cordova-plugin-filepath@^1.5.1",
+  "_id": "cordova-plugin-filepath@1.5.1",
+  "_inBundle": false,
+  "_integrity": "sha1-cM7tkvZ+pNU0YhSyclZsKSqepHM=",
+  "_location": "/cordova-plugin-filepath",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "cordova-plugin-filepath@^1.5.1",
+    "name": "cordova-plugin-filepath",
+    "escapedName": "cordova-plugin-filepath",
+    "rawSpec": "^1.5.1",
+    "saveSpec": null,
+    "fetchSpec": "^1.5.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/cordova-plugin-filepath/download/cordova-plugin-filepath-1.5.1.tgz",
+  "_shasum": "70ceed92f67ea4d5346214b272566c292a9ea473",
+  "_spec": "cordova-plugin-filepath@^1.5.1",
+  "_where": "/Users/poetry/workspace/code-practice/side-project-for-practice/ionicApp",
+  "author": {
+    "name": "Ramesh Nair",
+    "email": "ram@hiddentao.com"
+  },
+  "bugs": {
+    "url": "https://github.com/hiddentao/cordova-plugin-filepath/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-filepath",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Resolve native file paths from content URLs for Cordova platforms",
+  "devDependencies": {
+    "sync-cordova-xml": "^0.4.0"
+  },
+  "homepage": "https://github.com/hiddentao/cordova-plugin-filepath#readme",
+  "keywords": [
+    "cordova",
+    "file",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-filepath",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiddentao/cordova-plugin-filepath.git"
+  },
+  "scripts": {
+    "version": "sync-cordova-xml package.json plugin.xml --output plugin.xml && git add plugin.xml"
+  },
+  "version": "1.5.1"
+}
