@@ -34,6 +34,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 
+import { RelativetimePipe } from '../pipes/relativetime/relativetime'
+
 @NgModule({
   declarations: [
     MyApp,
@@ -50,7 +52,8 @@ import { FilePath } from '@ionic-native/file-path';
     NotificationPage,
     UserCenterPage,
     LoginPage,
-    TabsPage
+    TabsPage,
+    RelativetimePipe
   ],
   imports: [
   BrowserModule,

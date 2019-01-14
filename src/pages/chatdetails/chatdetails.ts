@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Events } from 'ionic-angular';
 import { IonicPage, NavController, NavParams, Content, TextInput } from 'ionic-angular';
 import { ChatserviceProvider, ChatMessage  } from  '../../providers/chatservice/chatservice'
 import { Storage } from '@ionic/storage'
@@ -37,6 +38,7 @@ export class ChatdetailsPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
+    public event: Events,
     public storage: Storage,
     public api: ApiProvider,
     public chatService: ChatserviceProvider
@@ -45,6 +47,9 @@ export class ChatdetailsPage {
     this.chatUserId = navParams.get('userid')
   }
 
+  ionViewWillLeave(){
+    this.event.unsubscribe('chat.received')
+  }
   ionViewDidEnter() {
     this.storage.get('UserId').then(val=>{
       if(val!=null){
@@ -58,6 +63,11 @@ export class ChatdetailsPage {
     },error => this.errorMsg = <any>error)
       
     this.getMessages().then(()=>{
+      this.scrollToBottom()
+    })
+    // 听取消息的发布 订阅
+    this.event.subscribe('chat.received', (msg:any, time:any) =>{
+      this.messageList.push(msg);
       this.scrollToBottom()
     })
   }

@@ -62,9 +62,9 @@ export class ChatserviceProvider {
     const id = Date.now().toString();
     let messageSend: ChatMessage = {
       messageId: id,
-      userId: '123321',
-      username: '慕女神',
-      userImgUrl: 'http://img.mukewang.com/user/57a322f00001e4ae02560256-40-40.jpg',
+      userId: '15474322092123',
+      username: '静观流叶',
+      userImgUrl: 'https://blog.poetries.top/images/avatar.jpg',
       toUserId: message.userId,
       time: Date.now(),
       message: '你是不是刚才给我发送了「' + message.message + '」？',
@@ -72,7 +72,6 @@ export class ChatserviceProvider {
     }
 
     //进行消息的发布，类似大喇叭进行广播。
-    
     setTimeout(() => {
       this.event.publish('chat.received', messageSend, Date.now())
     }, Math.random() * 1000)

@@ -20,9 +20,10 @@
             [class.left] = "msg.userId === chatUserId"
     >
       <img [src]="msg.userImgUrl" class="user-img">
+      <ion-spinner name="dots" *ngIf="msg.status === 'pending' "></ion-spinner>
       <div class="msg-detail">
         <div class="msg-info">
-          <p>{{msg.username}}&nbsp;{{msg.time | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+          <p>{{msg.username}}&nbsp;{{msg.time | relativetime}}</p>
         </div>
         <div class="msg-content">
           <p class="line-breaker">{{msg.message}}</p>
