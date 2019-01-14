@@ -18,6 +18,7 @@ import { ApiProvider } from '../../providers/api/api'
 })
 export class ChatdetailsPage {
 
+  // 和其他用户聊天
   chatUserName: string;
   chatUserId: string;
 
@@ -66,8 +67,41 @@ export class ChatdetailsPage {
   switchEmojiPicker() {
     this.isOpenEmojiPicker = !this.isOpenEmojiPicker
   }
+  // 发送消息
   sendMessage() {
+    if(!this.editorMessage.trim()) {
+      return;
+    }
+    const id = Date.now().toString();
+    let messageSend: ChatMessage = {
+      messageId: id,
+      userId: this.userId,
+      username: this.userName,
+      userImgUrl: this.userImgUrl,
+      toUserId: this.chatUserId,
+      time: Date.now(),
+      message: this.editorMessage,
+      status: 'pending'
+    }
+    this.messageList.push(messageSend)
+    this.scrollToBottom()
 
+    this.editorMessage = ''
+    if(!this.isOpenEmojiPicker) { // 判断聊天输入框是否打开
+      this.messageInput.setFocus()
+    }
+    //发送消息并改变消息的状态
+    this.chatService.sendMessage(messageSend)
+      .then(() => {
+        let index = this.getMessageIndex(id);
+        if (index !== -1) {
+          this.messageList[index].status = 'success';
+        }
+      });
+
+  }
+  getMessageIndex(id: string) {
+    return this.messageList.findIndex(e => e.messageId === id);
   }
   // 光标移到textarea上
   focus() {
