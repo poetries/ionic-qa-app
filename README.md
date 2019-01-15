@@ -1,6 +1,7 @@
 ## Ionic QA
 
 > 一个仿效知乎布局的`app`，它使用`ionic4`、`angular7`构建，支持`IOS`和安卓双平台。此项目仅仅做学习技术使用
+> 学习记录总结  http://blog.poetries.top/2019/01/10/ionic-summary
 
 ### 环境信息
 
