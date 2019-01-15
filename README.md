@@ -42,6 +42,18 @@ sudo ionic build
 
 ### screenShot
 
+**1. 扫描体验-浏览器端**
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-dff8f30069e06282.png)
+
+
+**2. 扫描下载apk安装包**
+
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-9d34db4a0043da97.png)
+
+
+**app截图**
+
 ![image.png](https://upload-images.jianshu.io/upload_images/1480597-fffba2838173ce04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ![image.png](https://upload-images.jianshu.io/upload_images/1480597-02685215c7c2e312.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
