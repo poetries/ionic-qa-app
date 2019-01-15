@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/poetry/workspace/code-practice/side-project-for-practice/ionicApp/platforms/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-eu/values-eu.xml",
+            "map": [
+                {
+                    "source": "/private/var/root/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.3.0.aar/bb4cf6718824656a4e623d12a4c99b30/res/values-eu/values-eu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,119,168,316",
+                        "endColumns": "63,48,147,111",
+                        "endOffsets": "114,163,311,423"
+                    }
+                }
+            ]
+        }
+    ]
+}
