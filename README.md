@@ -1,6 +1,6 @@
 ## Ionic App
 
-### 环境
+### 环境信息
 
 ```bash
 Ionic:
