@@ -20,6 +20,15 @@ System:
    Xcode  : Xcode 10.1 Build version 10B61
 ```
 
+### 技术栈
+
+- `Angular7`
+- `Ionic4`
+- `Cordova`
+- `ES6`
+- `Rxjs`
+
+
 ### 构建
 
 **1.全局安装ionic**
