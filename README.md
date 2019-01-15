@@ -44,12 +44,13 @@ sudo ionic build
 
 **1. 扫描体验-浏览器端**
 
-![image.png](https://upload-images.jianshu.io/upload_images/1480597-dff8f30069e06282.png)
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-3f44164c8b5b0b4c.png)
 
 
 **2. 扫描下载apk安装包**
 
-![image.png](https://upload-images.jianshu.io/upload_images/1480597-9d34db4a0043da97.png)
+![image.png](https://upload-images.jianshu.io/upload_images/1480597-7728191da0578994.png)
+
 
 
 **app截图**
